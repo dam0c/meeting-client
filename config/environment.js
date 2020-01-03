@@ -1,6 +1,11 @@
 'use strict';
 
+const {
+  HOST_LOCAL = 'http://localhost:3000'
+}= process.env;
+
 module.exports = function(environment) {
+  const hostLocal = HOST_LOCAL;
   let ENV = {
     modulePrefix: 'meeting-client',
     environment,
@@ -20,6 +25,14 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
+      apiURL: hostLocal,
+      apiURLprefix: 'api',
+
+
+      api: {
+        host: hostLocal,
+        apiNamespace: 'api'
+      }
     }
   };
 
