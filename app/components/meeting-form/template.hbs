@@ -1,2 +1,20 @@
-Hello World
+<BsModal
+ @open={{open}}
+ @onSubmit={{action "createUser"}} as |modal|>
+
+  <modal.header>
+    <h4 class="modal-title">Meeting</h4>
+  </modal.header>
+
+  <modal.body>
+    <input type="text" label="Name">
+    <input type="date" label="Datum">
+    <input type="number" label="Dauer">
+  </modal.body>
+
+  <modal.footer>
+    <BsButton @type="success" @onClick={{action modal.submit}}>Erstellen</BsButton>>
+  </modal.footer>
+</BsModal>
+
 {{yield}}
