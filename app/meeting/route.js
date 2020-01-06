@@ -6,9 +6,14 @@ export default Route.extend({
     const store = this.store;
 
     return hash({
-      meetings: store.findAll('meeting')
-    })
-
+      meetings: store.query('meeting', {
+        filter: {
+          where: {
+            name: 'Meeting1'
+          }
+        }
+      })
+    });
   }
 
 });

@@ -1,1 +1,9 @@
+Wilkommen in der Meeting App
+
+<BsForm @formLayout="vertical" @model={{this}} @onSubmit={{action "submit"}} as |form|>
+  <form.element @controlType="email" @label="Email" @placeholder="www.abc@xyz.de" @property="email" @required={{true}} @helpText="Minimum 6 characters" />
+  <form.element @controlType="password" @label="Passwort" @placeholder="*****" @property="password" @required={{true}} />
+  <BsButton @defaultText="Login" @type="primary" @buttonType="submit" />
+</BsForm>
+
 {{outlet}}

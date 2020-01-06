@@ -14,6 +14,8 @@ const {
 export default JSONAPIAdapter.extend(DataAdapterMixin,{
   host,
   namespace: apiNamespace,
+  ContentType: "application/json; charset=utf-8",
+
 
   authorize(xhr) {
     const { id, code, access_token } = this.get('session.data.authenticated');
